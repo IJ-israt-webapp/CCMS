@@ -59,6 +59,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>CCMS | Log in</title>
+  
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -78,6 +79,12 @@
   <div class="login-logo">
     <a href="../../index2.html"><strong>CCMS</strong><b></b></a>
   </div>
+  
+  @if(Session::has('success'))
+    <div class="alert alert-success">
+        {{ Session::get('success') }}
+    </div>
+@endif
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
@@ -127,15 +134,24 @@
            
           <!-- /.col -->
         </div>
+
+
+
       </form>
 
      
+     
       <!-- /.social-auth-links -->
 
-    </div>
+   
     <!-- /.login-card-body -->
   </div>
+
+  </div>
+    
+
 </div>
+
 <!-- /.login-box -->
 
 <!-- jQuery -->

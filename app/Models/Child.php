@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Guardian extends Model
+class Child extends Model
 {
     use HasFactory;
-
-    protected $table = 'guardian';
+    protected $table = 'children';
 
     protected $guarded = ['id'];
-    
+
+
 }

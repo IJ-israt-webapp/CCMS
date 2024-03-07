@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\backend;
 use App\Models\User;
+use App\Models\member;
 use App\Models\Guardian;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class ChildCareRegistrationController extends Controller
 {
@@ -35,9 +37,11 @@ class ChildCareRegistrationController extends Controller
         $data = $request->all();
         $data['status'] = 'active';
         $data['password'] = Hash::make($data['password']);
-        Guardian::create($data);
+        member::create($data);
 
-        return redirect()->route('login')->with('message', 'Registration Successfull');
+        Session::flash('success', 'Registration successful!');
+
+        return redirect()->route('login');
 
     }
 }

@@ -79,7 +79,7 @@
         @if($errors->has('email'))
                 <div class="alert alert-danger">{{ $errors->first('email') }}</div>
             @endif
-            </div>
+        </div>
 
 
         <div class="input-group mb-3">
@@ -113,6 +113,7 @@
           <!-- /.col -->
         </div>
       </form>
+
 
       
 <!-- /.register-box -->

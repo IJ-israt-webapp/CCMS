@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ChildController;
 use App\Http\Controllers\backend\AuthController;
 use App\Http\Controllers\backend\DashboardController;
 use App\Http\Controllers\backend\ChildCareRegistrationController;
@@ -29,4 +30,10 @@ Route::post('/registration-form',[ChildCareRegistrationController::class,'regist
 Route::get('/login',[AuthController::class,'Log'])->name('login');;
 Route::post('/login-form',[AuthController::class,'loginpage'])->name('admin.login');
 
+Route::get('/logout', [AuthController::class,'logout'])->name('logout');
+
 Route::get('/admin',[App\Http\controllers\AdminController::class,'index']);
+
+
+Route::get('/child/create', [ChildController::class,'create']);
+Route::post('/child/store', [ChildController::class,'store'])->name('child.store');
