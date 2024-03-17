@@ -80,11 +80,11 @@
     <a href="../../index2.html"><strong>CCMS</strong><b></b></a>
   </div>
   
-  @if(Session::has('success'))
-    <div class="alert alert-success">
-        {{ Session::get('success') }}
+  @if(Session::has('error'))
+    <div class="alert alert-danger">
+        {{ Session::get('error') }}
     </div>
-@endif
+  @endif
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
@@ -92,6 +92,18 @@
 
       <form action="{{route('admin.login')}}" method="post">
         @csrf
+        <div class="input-group mb-3">
+            <label>User Type</label>
+            <select name="type" class="form-control">
+              <option value="guardian">Guardian</option>
+              <option value="admin">Admin</option>
+            </select>
+            @if($errors->has('type'))
+                <div class="alert alert-danger">{{ $errors->first('type') }}</div>
+            @endif
+
+        </div>
+
         <div class="input-group mb-3">
           <input type="email" name="email" class="form-control" placeholder="Email">
           <div class="input-group-append">

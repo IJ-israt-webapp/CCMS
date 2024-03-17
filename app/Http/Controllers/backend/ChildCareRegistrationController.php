@@ -35,7 +35,7 @@ class ChildCareRegistrationController extends Controller
             'email'=>'required',
         ]);
         $data = $request->all();
-        $data['status'] = 'active';
+        $data['status'] = 'deactive';
         $data['password'] = Hash::make($data['password']);
         member::create($data);
 

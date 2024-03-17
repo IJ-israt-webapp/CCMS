@@ -9,7 +9,7 @@ class Guardian extends Model
 {
     use HasFactory;
 
-    protected $table = 'guardian';
+    // protected $table = 'guardian';
 
     protected $guarded = ['id'];
     

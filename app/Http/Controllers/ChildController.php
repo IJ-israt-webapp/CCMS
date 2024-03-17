@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\child;
+use App\Models\Children;
 use Illuminate\Http\Request;
 
 class ChildController extends Controller
@@ -14,23 +14,34 @@ class ChildController extends Controller
 
     public function store(Request $request)
     {
+        
         $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
-            'id_card' => 'required|integer',
-            'age' => 'required|integer',
-            'gender' => 'required|string|in:male,female',
-            'address' => 'required|string|max:255',
-            'parent_id' => 'required|integer',
-            'attendance_id' => 'required|integer',
-            'blood_group' => 'required|string|max:255',
+            'Name' => 'required',
+            'Id_card' => 'required|integer',
+            'Age' => 'required|integer',
+            'Gender' => 'required|string',
+            'Address' => 'required|string|max:255',
+            'Parent_id' => 'required|integer',
+            'Blood_group' => 'required|string|max:255',
             
         ]);
+        //dd($request->all());
         $data = $request->all();
-        $data['status'] = 'active';
+        //$data['status'] = 'active';
 
-        $child=child::create($validatedData);
+        Children::create([
+            'Name'=> $data['Name'],
+            'Age'=> $data['Age'],
+            'Parent_id'=> $data['Parent_id'],
+            'Blood_group'=> $data['Blood_group'],
+            'Gender'=> $data['Gender'],
+            'Id_Card'=>$request->Id_card,
+            'Address'=> $data['Address'],
+            
+            
+        ]);
 
-        return redirect('/dashboard')->with('success', 'Student created successfully!');
+        return redirect('')->with('success', 'Student created successfully!');
     }
 }
 
