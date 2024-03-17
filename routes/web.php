@@ -57,3 +57,5 @@ Route::get('/approve/{id}', [ApproveController::class,'approve'])->name('approve
 
 // teacher portion
 Route::get('/teacher/index',[TeacherController::class,'teacherIndex']) ->name('teacher.index');
+Route::get('/teacher/from',[TeacherController::class,'teacherFrom']) ->name('teacher.post');
+Route::get('/teacher/store',[TeacherController::class,'teacherStore']) ->name('teacher.store');
