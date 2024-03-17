@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TeacherController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ListController;
 use App\Http\Controllers\UserController;
@@ -52,3 +53,7 @@ Route::post('/guardian/store', [GuardianController::class,'store'])->name('guard
 Route::get('/guardian/list', [ListController::class, 'list'])->name('guardian.list');
 Route::get('/list/create', [ListController::class,   'create'])->name('list.create');
 Route::get('/approve/{id}', [ApproveController::class,'approve'])->name('approve');
+
+
+// teacher portion
+Route::get('/teacher/index',[TeacherController::class,'teacherIndex']) ->name('teacher.index');
