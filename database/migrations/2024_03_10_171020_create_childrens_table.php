@@ -14,13 +14,13 @@ return new class extends Migration
         Schema::create('childrens', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('Id_card');
+            $table->string('id_card');
             $table->string('age');
-            $table->string('gender');
             $table->string('address');
             $table->string('parent_id');
-            $table->string('attendance_id');
+            $table->string('gender');
             $table->string('blood_group');
+            $table->string('status')->default('Active');       
             $table->timestamps();
         });
     }

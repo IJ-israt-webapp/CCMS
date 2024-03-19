@@ -40,13 +40,18 @@ Route::get('/login',[AuthController::class,'Log'])->name('login');
     Route::get('/logout', [AuthController::class,'logout'])->name('logout');
     
     Route::get('/admin',[App\Http\controllers\AdminController::class,'index']);
-    
-    
+    //child portion
+    Route::get('/child/index',[ChildController::class,'childIndex']) ->name('child.index');
     Route::get('/child/create', [ChildController::class,'create'])->name('child.create');
     Route::post('/child/store', [ChildController::class,'store'])->name('child.store');
-    
+    Route::get('/child/{id}/edit', [ChildController::class,'edit'])->name('child.edit');
+    Route::put('/child/{id}/update', [ChildController::class,'update'])->name('child.update');
+    Route::get('/child/{id}/delete', [ChildController::class,'delete'])->name('child.delete');
 
-Route::get('/guardian/create', [GuardianController::class,'create'])->name('guardian.create');
+
+
+
+    Route::get('/guardian/create', [GuardianController::class,'create'])->name('guardian.create');
 Route::post('/guardian/store', [GuardianController::class,'store'])->name('guardian.store');
 
 
@@ -58,4 +63,7 @@ Route::get('/approve/{id}', [ApproveController::class,'approve'])->name('approve
 // teacher portion
 Route::get('/teacher/index',[TeacherController::class,'teacherIndex']) ->name('teacher.index');
 Route::get('/teacher/from',[TeacherController::class,'teacherFrom']) ->name('teacher.post');
-Route::get('/teacher/store',[TeacherController::class,'teacherStore']) ->name('teacher.store');
+Route::post('/teacher/store',[TeacherController::class,'teacherStore']) ->name('teacher.store');
+Route::get('/teacher/{id}/edit', [TeacherController::class,'edit'])->name('teacher.edit');
+Route::put('/teacher/{id}/update', [TeacherController::class,'update'])->name('teacher.update');
+Route::get('/teacher/{id}/delete', [TeacherController::class,'delete'])->name('teacher.delete');

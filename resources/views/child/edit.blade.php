@@ -1,9 +1,10 @@
-
 @extends('master')
 @section('main_section')
 <div class="container">
   <h2>Child Details</h2>
-<form action="{{route('child.store')}}" method="post" enctype="multipart/form-data">
+<form action="{{route('child.update',$childitem->id)}}" method="post" enctype="multipart/form-data">
+@csrf
+@method('PUT')
 @if($errors->any())
         @foreach($errors->all() as $error)
           <p class="alert alert-danger">{{$error}}</p>
@@ -17,38 +18,32 @@
 
   <div class="form-group">
     <label for="">Child Name</label>
-    <input type="name"  name="name" class="form-control" id=""  placeholder="Child name">
+    <input type="name"  name="name" class="form-control" id="name" value="{{ $childitem->name}}" placeholder="Child name">
   </div>
   <br>
   <div class="form-group">
     <label for="">ID Card</label>
-    <input type="number"  name="id_card" class="form-control" id=""  placeholder="Id_Card">
+    <input type="number"  name="id_card" class="form-control" id="id_card" value="{{ $childitem->id_card}}" placeholder="Id_Card">
   </div>
   <br>
   <div class="form-group">
     <label for="">Age</label>
-    <input type="number"  name= "age" class="form-control" id=""  placeholder="Age">
+    <input type="number"  name= "age" class="form-control" id="age"value="{{ $childitem->age}}"  placeholder="Age">
   </div>
   <br>
   <div class="form-group">
     <label for="">Address</label>
-    <input type="text"  name="address" class="form-control" id=""  placeholder="Address">
+    <input type="text"  name="address" class="form-control" id="address" value="{{ $childitem->address}}" placeholder="Address">
   </div>
   <br>
   <div class="form-group">
     <label for="">Parent_Id</label>
-    <select name="parent_id" class="form-control">
-      <option>Select Parent</option>
-      @foreach($guardians as $guardian)
-      <option value="{{ $guardian->id }}">{{ $guardian->name }}</option>
-      @endforeach
-    </select>
-    <!-- <input type="number"  name="parent_id" class="form-control" id=""  placeholder="Parent_id"> -->
+    <input type="number"  name="parent_id" class="form-control" id="parent_id"value="{{ $childitem->parent_id}}"  placeholder="Parent_id">
   </div>
   <br>
   <div class="form-group">
     <label for="">Blood_Group</label>
-    <input type="text"  name="blood_group" class="form-control" id=""  placeholder=" Blood_group">
+    <input type="text"  name="blood_group" class="form-control" id="blood_group" value="{{ $childitem->blood_group}}" placeholder=" Blood_group">
   </div>
 
 
@@ -66,7 +61,6 @@
 </div>
   </div>
   
-
   
   
 
@@ -76,6 +70,3 @@
 </div>
 @endsection
               
-
-
-                

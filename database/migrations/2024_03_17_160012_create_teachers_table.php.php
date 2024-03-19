@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('number');  
             $table->string('mail');  
             $table->string('nid');  
-            $table->string('address');  
+            $table->string('address');
+            $table->string('password'); 
             $table->string('gender'); 
             $table->string('status')->default('Active');         
             $table->timestamps();

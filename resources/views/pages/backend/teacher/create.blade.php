@@ -15,35 +15,42 @@
   @csrf
 
   <div class="form-group">
-    <label for="">Teacher Name</label>
-    <input type="name"  name="name" class="form-control" id=""  placeholder="teacher name">
+    <label for=""> Name</label>
+    <input type="name"  name="name" class="form-control" id=""  placeholder=" name">
   </div>
   <br>
   <div class="form-group">
-    <label for="">Teacher Identity Number</label>
-    <input type="number"  name="identity" class="form-control" id=""  placeholder="teacher identity number">
+    <label for=""> Identity Number</label>
+    <input type="number"  name="identity" class="form-control" id=""  placeholder=" identity number">
   </div>
   <br>
   <div class="form-group">
-    <label for="">Teacher Phone Number</label>
-    <input type="number"  name= "number" class="form-control" id=""  placeholder="teacher phone number">
+    <label for=""> Phone Number</label>
+    <input type="number"  name= "number" class="form-control" id=""  placeholder=" phone number">
+  </div>
+  <br>
+  
+  <div class="form-group">
+    <label for=""> NID</label>
+    <input type="number"  name="nid" class="form-control" id=""  placeholder=" nid number">
   </div>
   <br>
   <div class="form-group">
-    <label for="">Teacher Mail ID</label>
-    <input type="email"  name="mail" class="form-control" id=""  placeholder="teacher mail id">
+    <label for=""> Address</label>
+    <input type="text"  name="address" class="form-control" id=""  placeholder=" address">
   </div>
   <br>
   <div class="form-group">
-    <label for="">Teacher NID Number</label>
-    <input type="number"  name="nid" class="form-control" id=""  placeholder="teacher nid number">
+    <label for="">Email</label>
+    <input type="email"  name="mail" class="form-control" id=""  placeholder=" email address">
   </div>
   <br>
   <div class="form-group">
-    <label for="">Teacher Address</label>
-    <input type="text"  name="address" class="form-control" id=""  placeholder="teacher address">
+    <label for="">Password</label>
+    <input type="text"  name="password" class="form-control" id=""  placeholder=" password">
   </div>
   <br>
+
   <div class="form-group">
   <label for=""> Gender </label>
   <div class="form-check">

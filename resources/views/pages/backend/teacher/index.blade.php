@@ -2,23 +2,23 @@
 @section('main_section')
 
 <div class="container">
-    <h2>Rank</h2>
+    <h2>Teacher</h2>
     <br>
     <a class="btn btn-success" href="{{route('teacher.post')}}">Add Teacher</a>
  <br>
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Teacher Name</th>
-      <th scope="col">Identity Number</th>
-      <th scope="col">Phone Number</th>
-      <th scope="col">Mail</th>
-      <th scope="col">NID</th>
-      <th scope="col">Address</th>
-      <th scope="col">Gender</th>
-      <th scope="col">Status</th>
-      <th scope="col">Action</th>
+      <th scope="col"></th>
+      <th scope="col">name</th>
+      <th scope="col">identity</th>
+      <th scope="col">number</th>
+      <th scope="col">mail</th>
+      <th scope="col">nid</th>
+      <th scope="col">address</th>
+      <th scope="col">gender</th>
+      <th scope="col">status</th>
+      <th scope="col">action</th>
     </tr>
   </thead>
   <tbody>
@@ -27,14 +27,26 @@
       <th scope="row">{{$key+1}}</th>
 
       <td>{{$item->name}}</td>
+      <td>{{$item->identity}}</td>
+      <td>{{$item->number}}</td>
+      <td>{{$item->mail}}</td>
+      <td>{{$item->nid}}</td>
+      <td>{{$item->address}}</td>
+      <td>{{$item->gender}}</td>
       <td>{{$item->status}}</td>
       
    
 <td>
+
+<div class="iconss">
+                                    <a href="{{ route('teacher.post')}}"> <i class="fas fa-eye"></i></a>
+                                    <a href="{{ route('teacher.edit', $item->id)}}"><i class="fas fa-edit"></i></a>
+                                    <a href="{{ route('teacher.delete',$item->id)}}"><i class="fas fa-trash-alt"></i></a>
+                                </div>
+
+
   
-  <!-- <a class="btn btn-info" href="{{route('rank.view',$item->id)}}">View</a> -->
-<!-- <a class="btn btn-warning" href="{{route('rank.edit',$item->id)}}">Edit</a>
-<a class="btn btn-danger" href="{{route('rank.delete',$item->id)}}">Delete</a> -->
+
 </td>
 </tr>
     @endforeach
